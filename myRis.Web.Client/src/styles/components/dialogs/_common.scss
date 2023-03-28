@@ -1,0 +1,138 @@
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+$dialog-main-button-min-width: 100px;
+$dialog-main-button-max-width: 150px;
+
+$dialog-main-button-min-height: 35px;
+$dialog-main-button-max-height: 45px;
+
+$select-dialog-min-width: 700px;
+$select-dialog-max-width: 1400px;
+$select-dialog-min-height: 400px;
+$select-dialog-max-height: 800px;
+
+%dialog-common {
+  @extend %common-font;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: $full-window-min-width;
+  min-height: $full-window-min-height;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+%select-dialog-common {
+  @extend %dialog-common;
+
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+%select-dialog-container-common {
+  @extend %dialog-container-common;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 80%;
+  height: 90%;
+
+  min-width: 700px;
+  max-width: 1400px;
+  min-height: 400px;
+  max-height: 800px;
+
+  padding: 2% 4%;
+}
+
+%dialog-container-common {
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.1);
+  border: solid 1px $app-white-4;
+
+  background-color: $app-white;
+}
+
+%dialog-title-common {
+  box-sizing: border-box;
+  width: 100%;
+  height: 5%;
+
+  min-height: 30px;
+
+  margin-bottom: 25px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+
+  font-weight: bold;
+}
+
+%dialog-grid-label-h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: normal;
+
+  div {
+    white-space:nowrap;
+    align-items:center;
+    justify-content: flex-start;
+  }
+}
+
+%dialog-grid-button-common {
+  width: 10%;
+  height: 40px;
+
+  margin-right: 10px;
+
+  min-width: 130px;
+}
+
+%dialog-control-button-row {
+  box-sizing: border-box;
+  width: 100%;
+  height: 5%;
+
+  min-height: 50px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  margin-top: 10px;
+
+  div {
+    @extend %dialog-grid-button-common;
+  }
+}

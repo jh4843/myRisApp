@@ -1,0 +1,15 @@
+#protocol-table-sub {
+  overflow: visible;
+
+  table.vgt-table th {
+    @extend %table-sub-header-font;
+  }
+
+  table.vgt-table td {
+    @extend %table-sub-body-font;
+
+    .dropdown-base__label__text {
+      @extend %table-sub-body-font;
+    }
+  }
+}

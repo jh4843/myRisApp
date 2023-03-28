@@ -1,0 +1,80 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+
+    <!--color checker-->
+    <!-- https://www.schemecolor.com/sample?getcolor=B6B6B6-->
+    <!-- Font -->
+    <Style TargetType="{x:Type TextElement}">
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="9pt" />
+    </Style>
+    <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="9pt" />
+        <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <!-- Brushes -->
+    <SolidColorBrush po:Freeze="True" x:Key="BasementBrush" Color="#FF0E0E0E" />
+
+    <!-- ListView Item -->
+    <SolidColorBrush po:Freeze="True" Opacity="0.3" x:Key="lstView01" Color="#04a7fa" />
+    <SolidColorBrush po:Freeze="True" x:Key="lstView02" Color="#FF0E0E0E" />
+    <SolidColorBrush po:Freeze="True" x:Key="lstView03" Color="#FF0E0E0E" />
+
+    <!-- Original Sample Brushes -->
+    <!-- 164 164 164 -->
+    <SolidColorBrush po:Freeze="True" x:Key="TextBrush01" Color="#FFA4A4A4" />
+    <!-- 255 255 255 -->
+    <SolidColorBrush po:Freeze="True" x:Key="TextBrush02" Color="#FFFFFFFF" />
+    <!-- 140 140 140 -->
+    <SolidColorBrush po:Freeze="True" x:Key="TextBrush03" Color="#FF8C8C8C" />
+    <!-- 218 218 218 -->
+    <SolidColorBrush po:Freeze="True" x:Key="TextBrush04" Color="#FFDADADA" />
+    <!-- 182 182 182 : 보통 Text -->
+    <SolidColorBrush po:Freeze="True" x:Key="TextBrush05" Color="#FFB6B6B6" />
+    <!-- 180 180 180 -->
+    <SolidColorBrush po:Freeze="True" x:Key="TextBrush06" Color="#FFB4B4B4" />
+    <!-- 135 135 135 -->
+    <SolidColorBrush po:Freeze="True" x:Key="TextBrush07" Color="#FF878787" />
+    <!-- 197 198 199 -->
+    <SolidColorBrush po:Freeze="True" x:Key="TextBrush08" Color="#FFC5C6C7" />
+    <!-- 155 155 155 -->
+    <SolidColorBrush po:Freeze="True" x:Key="TextBrush09" Color="#FF9B9B9B" />
+    <!-- 214 222 234 -->
+    <SolidColorBrush po:Freeze="True" x:Key="TextBrush10" Color="#FFD6DEEA" />
+    <!-- 123 200 249 -->
+    <SolidColorBrush po:Freeze="True" x:Key="TextBrush11" Color="#FF7BC8EA" />
+    <!-- 158 233 109 -->
+    <SolidColorBrush po:Freeze="True" x:Key="TextBrush12" Color="#FF9EE96D" />
+    <!-- 108 108 108 -->
+    <SolidColorBrush po:Freeze="True" x:Key="TextBrush13" Color="#FF6C6C6C" />
+    <!-- 88 88 88 -->
+    <SolidColorBrush po:Freeze="True" x:Key="TextBrush14" Color="#FF585858" />
+    <!-- 198 198 198 -->
+    <SolidColorBrush po:Freeze="True" x:Key="TextBrush15" Color="#FFC6C6C6" />
+
+    <SolidColorBrush po:Freeze="True" x:Key="FocusBrush" Color="#FFD97793" />
+
+    <!-- Highlight -->
+    <SolidColorBrush po:Freeze="True" x:Key="Highlight10" Color="#19FFFFFF" />
+    <SolidColorBrush po:Freeze="True" x:Key="Highlight20" Color="#33FFFFFF" />
+
+    <!-- FocusVisual : FocusVisualStyle -->
+    <Style x:Key="FocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border>
+                        <Rectangle Margin="2" Stroke="{StaticResource FocusBrush}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+</ResourceDictionary>

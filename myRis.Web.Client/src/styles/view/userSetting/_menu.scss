@@ -1,0 +1,154 @@
+%menu-common-group {
+  box-sizing: border-box;
+
+  @extend %h4-common;
+  color: $app-white-6;
+  font-weight: 600;
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  &:active {
+    background-color: transparent;
+  }
+}
+
+%menu-common-content {
+  box-sizing: border-box;
+  background-color: transparent;
+
+  a {
+    @extend %common-font;
+    text-decoration: none;
+  }
+}
+
+.user-setting-menu {
+  // Box model
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 10px 10%;
+  margin: 0 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  //
+
+  ul {
+    width: 100%;
+    height: 100%;
+
+    margin: 0 0;
+    padding: 0 0;
+
+    list-style: none;
+
+    // Color
+    background-color: transparent;
+  }
+
+  &__title {
+    @extend %common-font;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 5%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  &__menu {
+    box-sizing: border-box;
+    width: 100%;
+    height: 95%;
+    padding-top: 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .user-setting-menu-item {
+  
+      margin: 0 0;
+      width: 100%;
+      height: auto;
+  
+      display: flex;
+      flex-flow: row nowrap;
+  
+      a {
+        @extend %common-font;
+        text-decoration: none;
+
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+
+        color: $app-white-6;
+      }
+  
+      &:hover {
+        a {
+          color: $app-primary-color-1;
+          text-decoration: none;
+        }
+      }
+  
+      &:active {
+        a {
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+  
+      &__group-name {
+        @extend %menu-common-group;
+  
+        box-sizing: border-box;
+        width: 100%;
+        height: 30px;
+        margin-top: 10px;
+        padding-left: 2%;
+  
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+      }
+  
+      &__content {
+        @extend %menu-common-content;
+  
+        box-sizing: border-box;
+        width: 100%;
+        height: 30px;
+  
+        padding-left: 1.5rem;
+  
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        overflow: auto;
+        
+        &.actived {
+          color: $app-primary-color-1;
+          font-weight: bold;
+
+          padding-left: 0.5rem;
+        }
+      }
+    }
+  }
+}

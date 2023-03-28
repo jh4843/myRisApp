@@ -1,0 +1,194 @@
+//input default (design: button1, use: primary control)
+$primary-inputbox-background-color-normal: #f6f6f6;
+$primary-inputbox-background-color-hover: #f6f6f6;
+$primary-inputbox-background-color-selected: #f6f6f6;
+$primary-inputbox-background-color-disable: $app-white-3;
+
+$primary-inputbox-font-color-normal: $app-white-6;
+$primary-inputbox-font-color-hover: $app-white-6;
+$primary-inputbox-font-color-selected: $app-white-6;
+$primary-inputbox-font-color-disable: $app-white;
+
+$primary-inputbox-border-normal: solid 1px $app-white-3;
+$primary-inputbox-border-hover: solid 1px $app-white-5;
+$primary-inputbox-border-selected: solid 1px $app-primary-color-1;
+$primary-inputbox-border-disable: solid 1px $app-white-3;
+
+//input for table (design: table, use: add patient dialog)
+$table-inputbox-background-color-normal: #f6f6f6;
+$table-inputbox-background-color-hover: #f6f6f6;
+$table-inputbox-background-color-selected: #f6f6f6;
+$table-inputbox-background-color-disable: $app-white-3;
+
+//$table-inputbox-font-color-normal: $app-white-4;
+$table-inputbox-font-color-normal: $app-white-6;
+$table-inputbox-font-color-hover: $app-white-6;
+$table-inputbox-font-color-selected: $app-white-6;
+$table-inputbox-font-color-disable: $app-white;
+
+$table-inputbox-border-normal: none;
+$table-inputbox-border-hover: none;
+$table-inputbox-border-selected: none;
+$table-inputbox-border-disable: none;
+
+//Expand Items
+$primary-dropdown-background-color-normal: #f6f6f6;
+$primary-dropdown-background-color-hover: #f6f6f6;
+$primary-dropdown-background-color-selected: #f6f6f6;
+$primary-dropdown-background-color-disable: $app-white-3;
+
+$primary-dropdown-border-normal: solid 1px $app-white-3;
+$primary-dropdown-border-hover: solid 1px $app-white-5;
+$primary-dropdown-border-selected: solid 1px $app-primary-color-1;
+$primary-dropdown-border-disable: solid 1px $app-white-3;
+
+$primary-dropdown-option-item-font-color-normal: $app-white-6;
+$primary-dropdown-option-item-font-color-hover: $app-white-7;
+
+.text-inputbox {
+  @extend %inline-component;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__expand {
+    position: relative;
+    width: 100%;
+  }
+}
+
+%inputbox-container-common {
+  @extend %component-container-base;
+}
+
+%input-common {
+  @extend %component-item-base;
+  box-sizing: border-box;
+  background-color: transparent;
+  padding: 0.1rem 0.3rem;
+}
+// Primary
+.text-inputbox-container.primary {
+  @extend %inputbox-container-common;
+
+  border: $primary-inputbox-border-normal;
+  border-radius: 8px;
+  background-color: $primary-inputbox-background-color-normal;
+
+  &:hover {
+    color: $primary-inputbox-font-color-hover;
+    background-color: $primary-inputbox-background-color-hover;
+    border: $primary-inputbox-border-hover;
+  }
+
+  &:focus {
+    color: $primary-inputbox-font-color-selected;
+    background-color: $primary-inputbox-background-color-selected;
+    border: $primary-inputbox-border-selected;
+  }
+
+  &:active {
+    color: $primary-inputbox-font-color-selected;
+    background-color: $primary-inputbox-background-color-selected;
+    border: $primary-inputbox-border-selected;
+  }
+
+  &:disabled {
+    color: $primary-inputbox-font-color-disable;
+    background-color: $primary-inputbox-background-color-disable;
+    border: $primary-inputbox-border-disable;
+  }
+}
+
+.text-inputbox-input.primary {
+  @extend %input-common;
+
+  color: $primary-inputbox-font-color-normal;
+
+  outline: none !important;
+  border: none;
+}
+
+.text-inputbox-container.primary.disabled {
+  color: $primary-inputbox-font-color-disable;
+  background-color: $primary-inputbox-background-color-disable;
+  border: $primary-inputbox-border-disable;
+
+  cursor: unset;
+}
+
+.text-inputbox-input.primary.disabled {
+  color: $primary-inputbox-font-color-disable;
+
+  cursor: unset;
+}
+
+// Primary
+.text-inputbox-container.table {
+  @extend %inputbox-container-common;
+
+  border: $table-inputbox-border-normal;
+  border-radius: 8px;
+  background-color: $table-inputbox-background-color-normal;
+
+  &:hover {
+    color: $table-inputbox-font-color-hover;
+    background-color: $table-inputbox-background-color-hover;
+    border: $table-inputbox-border-hover;
+  }
+
+  &:focus {
+    color: $table-inputbox-font-color-selected;
+    background-color: $table-inputbox-background-color-selected;
+    border: $table-inputbox-border-selected;
+  }
+
+  &:active {
+    color: $table-inputbox-font-color-selected;
+    background-color: $table-inputbox-background-color-selected;
+    border: $table-inputbox-border-selected;
+  }
+
+  &:disabled {
+    color: $table-inputbox-font-color-disable;
+    background-color: $table-inputbox-background-color-disable;
+    border: $table-inputbox-border-disable;
+  }
+}
+
+.text-inputbox-container.table.disabled {
+  color: $table-inputbox-font-color-disable;
+  background-color: $table-inputbox-background-color-disable;
+  border: $table-inputbox-border-disable;
+
+  cursor: unset;
+}
+
+.text-inputbox-container.table.readonly {
+  cursor: unset;
+}
+
+.text-inputbox-input.table {
+  @extend %input-common;
+
+  color: $table-inputbox-font-color-normal;
+
+  outline: none !important;
+  border: none;
+}
+
+.text-inputbox-input.table.disabled {
+  color: $table-inputbox-font-color-disable;
+
+  cursor: unset;
+}
+
+.text-inputbox-input.table.readonly {
+  cursor: unset;
+}
+
+.text-inputbox-clear-icon {
+  margin-right: 0.3rem;
+}

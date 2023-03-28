@@ -1,0 +1,123 @@
+$sign-in-control-height: 35px;
+
+.layout-sign-in-container {
+  @extend %mini-view-container;
+}
+
+%sign-in-control-common {
+  box-sizing: border-box;
+
+  width: 60%;
+  min-width: 100px;
+  height: $sign-in-control-height;
+  font-size: 13.5px;
+}
+
+.layout-sign-in {
+  @extend %basic-mini-view;
+  width: 900px;
+  height: 520px;
+
+  &__title {
+    @extend %mini-view-title;
+
+    color: $app-white-7;
+  }
+  &__body {
+    @extend %mini-view-body;
+
+    &__title {
+      box-sizing: inherit;
+
+      width: 100%;
+      height: 15%;
+    }
+
+    &__inputs {
+      box-sizing: inherit;
+
+      width: 100%;
+      height: 50%;
+
+      &__container {
+        box-sizing: inherit;
+
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &__row {
+        @extend %mini-view-body-row;
+
+        width: 60%;
+        height: 25%;
+        padding: 0 18% 0 2%;
+        min-width: 300px;
+        min-height: $sign-in-control-height;
+
+        .text-inputbox {
+          @extend %sign-in-control-common;
+
+          input {
+            background-color: #f6f6f6;
+          }
+        }
+
+        .dropdown-base {
+          @extend %sign-in-control-common;
+
+          &__label {
+            background-color: #f6f6f6;
+          }
+        }
+      }
+    }
+
+    &__err-msg {
+      width: 100%;
+      height: 5%;
+
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+
+      font-size: small;
+      color: red;
+    }
+
+    &__buttons {
+      box-sizing: inherit;
+
+      width: 100%;
+      height: 30%;
+
+      min-height: 80px;
+
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: center;
+
+      &__signin {
+        width: 220px;
+        height: 50px;
+        margin-bottom: 10px;
+      }
+
+      a {
+        font-size: 12px;
+        color: $app-white-6;
+      }
+    }
+  }
+
+  &__footer {
+    @extend %mini-view-footer;
+  }
+}

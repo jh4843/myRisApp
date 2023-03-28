@@ -1,0 +1,65 @@
+@import "./commonView.scss";
+@import "./userSetting/_common.scss";
+@import "./userSetting/_menu.scss";
+@import "./userSetting/_systeminfo.scss";
+@import "./userSetting/_profile.scss";
+@import "./userSetting/_procplan.scss";
+@import "./userSetting/_protocol.scss";
+@import "./userSetting/_bodypart.scss";
+@import "./userSetting/_station.scss";
+@import "./userSetting/_ordreason.scss";
+
+$showMenuButtonIcon_Normal: $app-white-5;
+$showMenuButtonIcon_Hover: #7ed4ff;
+$showMenuButtonIcon_Select: $app-primary-color-1;
+
+$showMenuButtonBackground_Normal: transparent;
+$showMenuButtonBackground_Hover: transparent;
+$showMenuButtonBackground_Select: transparent;
+
+:export {
+  showMenuButtonIcon_Normal: $showMenuButtonIcon_Normal;
+  showMenuButtonIcon_Hover: $showMenuButtonIcon_Hover;
+  showMenuButtonIcon_Select: $showMenuButtonIcon_Select;
+
+  showMenuButtonBackground_Normal: $showMenuButtonBackground_Normal;
+  showMenuButtonBackground_Hover: $showMenuButtonBackground_Hover;
+  showMenuButtonBackground_Select: $showMenuButtonBackground_Select;
+}
+
+.layout-user-setting {
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 100%;
+
+  padding-top: 1%;
+
+  &__content {
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    overflow: auto;
+
+    &__menu {
+      margin: 0 0;
+      padding: 0 0;
+
+      width: 20%;
+      height: 100%;
+    }
+
+    &__view {
+      width: 80%;
+      height: 100%;
+
+      padding: 0 2%;
+    }
+  }
+}

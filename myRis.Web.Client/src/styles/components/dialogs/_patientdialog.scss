@@ -1,0 +1,11 @@
+@import "./patient/_addpatientdialog.scss";
+@import "./patient/_addpatienthumandialog.scss";
+@import "./patient/_addpatientvetdialog.scss";
+@import "./patient/_selectpatientdialog.scss";
+
+
+%patient-dialog-control-common {
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+}

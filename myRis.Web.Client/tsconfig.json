@@ -1,0 +1,42 @@
+{
+  // https://www.typescriptlang.org/tsconfig#target
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "baseUrl": "./",
+    "rootDir": "../",
+    "rootDirs": [
+      "src",
+      "../myRis.Web.Common"
+    ] /* List of root folders whose combined content represents the structure of the project at runtime. */,
+    "typeRoots": ["./src/types"],
+    "types": ["webpack-env"],
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+
+  "include": [
+    "src/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "../myRis.Web.Common",
+    "../myRis.Web.Common/**/*.ts",
+    "../myRis.Web.Common/**/*.vue"
+    //"package.json",
+  ],
+  "exclude": ["node_modules"]
+}

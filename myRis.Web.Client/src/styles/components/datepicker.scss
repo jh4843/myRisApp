@@ -1,0 +1,147 @@
+@import "./common.scss";
+
+$primary-datepicker-background-color-normal: #f6f6f6;
+$primary-datepicker-background-color-hover: #f6f6f6;
+$primary-datepicker-background-color-select: #f6f6f6;
+$primary-datepicker-background-color-disable: $app-white-3;
+
+$primary-datepicker-border-normal: solid 1px $app-white-3;
+$primary-datepicker-border-hover: solid 1px $app-white-5;
+$primary-datepicker-border-select: solid 1px $app-primary-color-1;
+$primary-datepicker-border-disable: solid 1px $app-white-3;
+
+$primary-datepicker-calendar-icon-fill-normal: $app-white-5;
+$primary-datepicker-calendar-icon-fill-hover: $app-white-6;
+$primary-datepicker-calendar-icon-fill-select: $app-white-7;
+$primary-datepicker-calendar-icon-fill-disable: $app-white-2;
+
+:export {
+  primaryDatepickerCalendarIconFillNormal: $primary-datepicker-calendar-icon-fill-normal;
+  primaryDatepickerCalendarIconFillHover: $primary-datepicker-calendar-icon-fill-hover;
+  primaryDatepickerCalendarIconFillSelect: $primary-datepicker-calendar-icon-fill-select;
+  primaryDatepickerCalendarIconFillDisable: $primary-datepicker-calendar-icon-fill-disable;
+}
+
+.datepicker-base {
+  @extend %inline-component;
+
+  overflow: visible;
+
+  &__container {
+    @extend %component-container-base;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0px 0px;
+    margin: 0px 0px;
+
+    position: relative;
+  }
+
+  &__label {
+    @extend %component-label-container-base;
+
+    // width: 98%;
+    // height: 96%;
+
+    // padding: 1% 1%;
+    // margin: 1% 0%;
+
+    // display: flex;
+    // align-items: center;
+    // flex-flow: row nowrap;
+    // justify-content: space-between;
+
+    border-radius: 8px;
+    border: $primary-datepicker-border-normal;
+    background-color: $primary-datepicker-background-color-normal;
+
+    &__text {
+      @extend %component-item-base;
+      box-sizing: border-box;
+      padding: 0.1rem 0.3rem;
+      width: auto;
+      color: $app-white-6;
+    }
+
+    &__placeholder {
+      @extend %component-item-base;
+      box-sizing: border-box;
+      padding: 0.1rem 0.3rem;
+      width: auto;
+      color: $app-white-4;
+    }
+
+    .calendar-icon {
+      position: relative;
+      margin-right: 2px;
+
+      top: -3px;
+      right: 0;
+      width: 12px;
+      height: 12px;
+
+      vertical-align: middle;
+    }
+
+    &:hover {
+      border: $primary-datepicker-border-hover;
+    }
+
+    &:disabled {
+      border: $primary-datepicker-border-disable;
+      background-color: $primary-datepicker-background-color-disable;
+    }
+
+    &.is-none-border {
+      border: none;
+
+      &:hover {
+        border: none;
+      }
+
+      &:disabled {
+        border: none;
+      }
+    }
+  }
+
+  &__label.disabled {
+    border: $primary-datepicker-border-disable;
+    background-color: $primary-datepicker-background-color-disable;
+
+    cursor: unset;
+
+    &.is-none-border {
+      border: none;
+    }
+  }
+
+  &__calendar {
+    display: block;
+
+    overflow: visible;
+
+    border-radius: 8px;
+    border: $primary-datepicker-border-normal;
+
+    color: black;
+
+    background-color: #f6f6f6;
+
+    position: absolute;
+    top: 100%;
+
+    margin-top: 10px;
+
+    z-index: 5;
+  }
+}
+
+// Toggled State
+.toggled {
+  .datepicker-base--label {
+    border: $primary-datepicker-border-select;
+  }
+}

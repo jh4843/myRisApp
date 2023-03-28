@@ -1,0 +1,108 @@
+@import "../common.scss";
+
+$common-fill-normal: $app-white-6;
+$common-fill-hover: $app-white-6;
+$common-fill-select: $app-white-7;
+$common-fill-disable: $app-white-3;
+
+$common-background-normal: $app-white;
+$common-background-hover: $app-white-2;
+$common-background-select: $app-white-3;
+$common-background-disable: $app-white;
+
+@mixin commonSvgIcon() {
+  .svg-base-icon.hover {
+    .svg-base-icon__background {
+      fill: $common-background-hover;
+    }
+  
+    .svg-base-icon__icon {
+      fill: $common-fill-hover;
+    }
+  }
+  
+  .svg-base-icon.disabled {
+    .svg-base-icon__background {
+      fill: $common-background-disable;
+    }
+  
+    .svg-base-icon__icon {
+      fill: $common-fill-disable;
+    }
+  }
+  
+  .svg-base-icon.selected {
+    .svg-base-icon__background {
+      fill: $common-background-select;
+    }
+  
+    .svg-base-icon__icon {
+      fill: $common-fill-select;
+    }
+  }
+  
+  svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0px;
+  
+    .svg-base-icon__background {
+      fill: $common-background-normal;
+    }
+  
+    .svg-base-icon__icon {
+      fill: $common-fill-normal;
+    }
+  }
+}
+
+@mixin setSvgIcon($iconNormal, $iconHover, $iconSelect, $iconDisable, $bkNormal, $bkHover, $bkSelect, $bkDisable) {
+  .svg-base-icon.hover {
+    .svg-base-icon__background {
+      fill: $bkHover;
+    }
+  
+    .svg-base-icon__icon {
+      fill: $iconHover;
+    }
+  }
+  
+  .svg-base-icon.disabled {
+    .svg-base-icon__background {
+      fill: $bkDisable;
+    }
+  
+    .svg-base-icon__icon {
+      fill: $iconDisable;
+    }
+  }
+  
+  .svg-base-icon.selected {
+    .svg-base-icon__background {
+      fill: $bkSelect;
+    }
+  
+    .svg-base-icon__icon {
+      fill: $iconSelect;
+    }
+  }
+  
+  svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0px;
+  
+    .svg-base-icon__background {
+      fill: $bkNormal;
+    }
+  
+    .svg-base-icon__icon {
+      fill: $iconNormal;
+    }
+  }
+}
+
+@import "./_toolbar.scss";
+@import "./_searchdrawer.scss";
+@import "./_components.scss";
+@import "./_setting.scss";

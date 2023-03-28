@@ -1,0 +1,22 @@
+﻿<Application
+    x:Class="myRis.Web.Scp.Setting.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:myRis.Web.Scp.Setting"
+    StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/myRis.Web.Scp.CommonUI;component/DesignResources.xaml" />
+                <!--<ResourceDictionary Source="/myRis.MWL.COMMON;component/DesignResources.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+            <!--  This is an optimization bug  -->
+            <!--  http://stackoverflow.com/questions/3419543/adding-a-merged-dictionary-to-a-merged-dictionary  -->
+            <!--  Dummy Style, anything you won't use goes  -->
+
+
+            <Style TargetType="{x:Type Rectangle}" />
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

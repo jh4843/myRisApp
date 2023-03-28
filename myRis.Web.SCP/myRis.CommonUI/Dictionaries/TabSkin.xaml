@@ -1,0 +1,109 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!-- TabControl -->
+    <Style TargetType="{x:Type TabControl}">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="0" />
+    </Style>
+
+    <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!-- TabItem -->
+    <Style TargetType="{x:Type TabItem}">
+        <Setter Property="Padding" Value="6 6" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid>
+                        <Grid Name="BGPanel" Margin="1">
+                            <!--<Border Name="BG1" CornerRadius="9 9 0 0" Background="#FF1E1E1E" Margin="0" />
+                            <Border Name="BG2" CornerRadius="7 7 0 0" Background="#FF212121" Margin="2 2 0 0" />
+                            <Border Name="BG3" CornerRadius="7 7 0 0" Background="#FF242423" Margin="3 3 0 0" />
+                            <Border Name="BG4" CornerRadius="7 7 0 0" Background="#FF272726" Margin="4 4 0 0" />
+                            <Border Name="Outline" CornerRadius="8 8 0 0" BorderBrush="#FF1A1A1A" BorderThickness="1" />-->
+                            <Border Name="BG1" CornerRadius="0 0 0 0" Background="White" Margin="0" />
+                            <Border Name="BG2" CornerRadius="0 0 0 0" Background="White" Margin="2 2 2 0" />
+                            <Border Name="BG3" CornerRadius="0 0 0 0" Background="White" Margin="3 3 3 0" />
+                            <Border Name="BG4" CornerRadius="0 0 0 0" Background="White" Margin="4 4 4 0" />
+                            <Border Name="Outline" CornerRadius="0 0 0 0" BorderBrush="White" BorderThickness="1" />
+                        </Grid>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                          RecognizesAccessKey="True" ContentSource="Header"
+                                          Margin="{TemplateBinding Padding}"
+                                          TextBlock.Foreground="{DynamicResource TextBrush09}"
+                                          Name="Presenter">
+                            <ContentPresenter.Resources>
+                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
+                                    <!--<Setter Property="FontFamily" Value="Franklin Gothic Demi" />-->
+                                    <Setter Property="FontSize" Value="10pt" />
+                                </Style>
+                            </ContentPresenter.Resources>
+                        </ContentPresenter>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="BG1" Property="Background" Value="#FF04a7fa" />
+                            <Setter TargetName="BG2" Property="Background" Value="#FF04a7fa" />
+                            <Setter TargetName="BG3" Property="Background" Value="white" />
+                            <Setter TargetName="BG4" Property="Background" Value="white" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Panel.ZIndex" Value="100"/>
+                            <Setter TargetName="BGPanel" Property="Margin" Value="0" />
+                            <Setter TargetName="Presenter" Property="TextBlock.Foreground" Value="{DynamicResource BasementBrush}" />
+                            <Setter TargetName="Outline" Property="BorderThickness" Value="1 1 1 0" />
+                            <!--<Setter TargetName="Outline" Property="BorderBrush" Value="#07c3f7" />-->
+                            <Setter TargetName="BG1" Property="Background" Value="#FF04a7fa" />
+                            <Setter TargetName="BG2" Property="Background" Value="#FF04a7fa" />
+                            <Setter TargetName="BG3" Property="Visibility" Value="Hidden" />
+                            <Setter TargetName="BG4" Property="Visibility" Value="Hidden" />
+                            <Setter TargetName="BG1" Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <!--<GradientStop Color="#07c3f7" Offset="0"/>
+                                        <GradientStop Color="#07c3f7" Offset="0.5"/>
+                                        <GradientStop Color="#07c3f7" Offset="0.5"/>-->
+                                        <!--<GradientStop Color="sc#1, 0.008847738, 0.0152600966, 0.0303535312" Offset="0.76082832038264314"/>
+                                        <GradientStop Color="sc#1, 0.0106404163, 0.0202107653, 0.0392942876" Offset="0.82895608673455712"/>
+                                        <GradientStop Color="sc#1, 0.013018582, 0.0267783161, 0.05115509" Offset="0.87457593674728784"/>
+                                        <GradientStop Color="sc#1, 0.0158627369, 0.0346327461, 0.06533995" Offset="0.91007454254969034"/>
+                                        <GradientStop Color="sc#1, 0.0176419541, 0.0395462364, 0.07421357" Offset="0.92727702856063843"/>
+                                        <GradientStop Color="#FF24384D" Offset="0.92727702856063843"/>
+                                        <GradientStop Color="#FF24384D" Offset="1"/>-->
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <!--<MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="True" />
+                                <Condition Property="IsMouseOver" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="BG1" Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF3B5769" Offset="0"/>
+                                        <GradientStop Color="#FF243351" Offset="0.5"/>
+                                        <GradientStop Color="#FF19243C" Offset="0.5"/>
+                                        <GradientStop Color="sc#1, 0.0107068373, 0.0215310175, 0.05270253" Offset="0.76082832038264314"/>
+                                        <GradientStop Color="sc#1, 0.0128497165, 0.0299864039, 0.06904412" Offset="0.82895608673455712"/>
+                                        <GradientStop Color="sc#1, 0.01569246, 0.0412033126, 0.09072286" Offset="0.87457593674728784"/>
+                                        <GradientStop Color="sc#1, 0.01909222, 0.05461812, 0.116649434" Offset="0.91007454254969034"/>
+                                        <GradientStop Color="sc#1, 0.02121901, 0.0630100146, 0.13286832" Offset="0.92727702856063843"/>
+                                        <GradientStop Color="#FF284766" Offset="0.92727702856063843"/>
+                                        <GradientStop Color="#FF284766" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </MultiTrigger>-->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value=".6" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

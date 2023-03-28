@@ -1,0 +1,29 @@
+%button-container-common {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+  padding: 0px 0px;
+  margin: 0px 0px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+%button-common {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+  vertical-align: middle;
+  padding: 0px 0px;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+$button-normal-background-color: #0280ef;
+$button-normal-border: solid 1px #ffffff;

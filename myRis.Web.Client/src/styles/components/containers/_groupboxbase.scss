@@ -1,0 +1,52 @@
+.group-box-base {
+  @extend %inline-component;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  border: none;
+
+  overflow: inherit;
+
+  &__title-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    box-sizing: border-box;
+    width: 15%;
+    height: 100%;
+    border: none;
+  }
+
+  &__title {
+    @extend %h3-common;
+    margin: 0 0;
+  }
+
+  &__search-icon {
+    width: 0.8rem;
+    height: 0.8rem;
+
+    margin-left: 0.3rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__content {
+    box-sizing: border-box;
+    width: 85%;
+    height: 100%;
+    border: none;
+    border-color: $app-white-5;
+
+    overflow: inherit;
+  }
+}

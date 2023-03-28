@@ -1,0 +1,41 @@
+$search-drawer-fill-normal: $app-white;
+$search-drawer-fill-hover: $app-white;
+$search-drawer-fill-selected: $app-white;
+$search-drawer-fill-disable: $app-white;
+
+$search-drawer-bk-normal: $app-white-7;
+$search-drawer-bk-hover: #4e4e4e;
+$search-drawer-bk-selected: #3e3e3e;
+$search-drawer-bk-disable: $app-white-4;
+
+$show-search-drawer-icon-normal: $app-white-5;
+$show-search-drawer-icon-hover: #7ed4ff;
+$show-search-drawer-icon-selected: $app-primary-color-1;
+$show-search-drawer-icon-disable: $app-white-4;
+
+$show-search-drawer-bk-normal: transparent;
+$show-search-drawer-bk-hover: transparent;
+$show-search-drawer-bk-selected: transparent;
+$show-search-drawer-bk-disable: $app-white-4;
+
+.mwl-search-drawer__search-buttons-container {
+  @include setSvgIcon($search-drawer-fill-normal, 
+  $search-drawer-fill-hover, 
+  $search-drawer-fill-selected, 
+  $search-drawer-fill-disable, 
+  $search-drawer-bk-normal, 
+  $search-drawer-bk-hover, 
+  $search-drawer-bk-selected, 
+  $search-drawer-bk-disable);
+}
+
+.layout-mwl__content__show-search-drawer-button__icon {
+  @include setSvgIcon($show-search-drawer-icon-normal, 
+  $show-search-drawer-icon-hover, 
+  $show-search-drawer-icon-selected, 
+  $show-search-drawer-icon-disable, 
+  $show-search-drawer-bk-normal, 
+  $show-search-drawer-bk-hover, 
+  $show-search-drawer-bk-selected, 
+  $show-search-drawer-bk-disable);
+}

@@ -1,0 +1,110 @@
+﻿<Window
+    x:Class="myRis.Web.Scp.Setting.View.MwlListView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:myRis.Web.Scp.Setting"
+    xmlns:sortableLstv="clr-namespace:myRis.Web.Scp.CommonUI.SortableListView;assembly=myRis.Web.Scp.CommonUI"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Style BasedOn="{StaticResource myFlatButtonStyle}" TargetType="{x:Type Button}">
+            <Setter Property="Height" Value="33" />
+            <Setter Property="Margin" Value="1,0" />
+        </Style>
+    </Window.Resources>
+    <DockPanel Background="#f2f2f2">
+        <StackPanel
+            x:Name="stkpBtnList"
+            Margin="10"
+            HorizontalAlignment="Right"
+            DockPanel.Dock="Top"
+            Orientation="Horizontal">
+
+            <Grid Width="120" Margin="0,0,20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Content="Order status" Grid.Row="0"></Label>
+                <ComboBox
+                x:Name="cbxOrderStatus"
+                ItemsSource="{Binding OrderStatusList}"
+                Visibility="Visible"
+                Grid.Row="1">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </Grid>
+            
+            
+            <Button
+                x:Name="btnToday"
+                Content="     Today     " />
+            <Button
+                x:Name="btnYesterday"
+                Content="     Yesterday     " />
+            <Button
+                x:Name="btnLast7Days"
+                Content="     Last 7 Days     " />
+            <Button
+                x:Name="btnLast1Month"
+                Content="     Last 1 Month     " />
+            <Button
+                x:Name="btnLast1Year"
+                Content="     Last 1 Year     " />
+        </StackPanel>
+        <ListView
+            x:Name="lstMwlView"
+            Margin="10,0,0,0"
+            IsSynchronizedWithCurrentItem="True"
+            ItemsSource="{Binding MwlItemList}"
+            local:ListViewBehavior.HideColumns="{Binding HideColumnNumbers}">
+            <ListView.View>
+                <GridView AllowsColumnReorder="True">
+                    <GridViewColumn DisplayMemberBinding="{Binding ord_status_flag}" Header="Order status" />
+                    <GridViewColumn Width="50" DisplayMemberBinding="{Binding pt_id}" Header="Pt.ID" />
+                    <GridViewColumn Width="70" DisplayMemberBinding="{Binding pt_name}" Header="Pt.Name" />
+                    <GridViewColumn DisplayMemberBinding="{Binding pt_sex}" Header="Sex" />
+                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding pt_birth_dttm, StringFormat=yyyy-MM-dd}" Header="Birth Date" />
+                    <GridViewColumn Width="95" DisplayMemberBinding="{Binding ord_acc_num}" Header="Accession No." />
+                    <GridViewColumn Width="70" DisplayMemberBinding="{Binding sps_modality}" Header="Modality" />
+                    <GridViewColumn DisplayMemberBinding="{Binding ord_requesting_phyc}" Header="Req.Phyc." />
+                    <GridViewColumn DisplayMemberBinding="{Binding sps_perform_phyc_name}" Header="SPS Perm. Phyc." />
+                    <GridViewColumn DisplayMemberBinding="{Binding sps_start_dttm}" Header="SPS Start Date" />
+                    <GridViewColumn DisplayMemberBinding="{Binding ord_study_uid}" Header="Study UID" />
+                    <GridViewColumn DisplayMemberBinding="{Binding ord_study_dttm}" Header="Study Date Time" />
+                    <GridViewColumn DisplayMemberBinding="{Binding sps_id}" Header="SPS ID" />
+                    <GridViewColumn DisplayMemberBinding="{Binding ord_rp_id}" Header="RP ID" />
+                    <GridViewColumn DisplayMemberBinding="{Binding patient_species_code_sequence}" Header="Patient Specise Code Sequence" />
+                    <GridViewColumn DisplayMemberBinding="{Binding patient_breed_code_sequence}" Header="Patient Breed Code Sequence" />
+                    <GridViewColumn DisplayMemberBinding="{Binding pt_responsible_person}" Header="Responsible person" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <!--<sortableLstv:SortableListViewControl Margin="10,0,0,0" x:Name="lstMwlView" ItemsSource="{Binding MwlItemList}">
+            <ListView.View>
+                <GridView AllowsColumnReorder="True">
+                    <GridViewColumn Header="Pt. ID" DisplayMemberBinding="{Binding pt_id}" />
+                    <GridViewColumn Header="Pt. Name" DisplayMemberBinding="{Binding pt_name}" />
+                    <GridViewColumn Header="Accession No." />
+                    <GridViewColumn Header="Modality" />
+                    <GridViewColumn Header="Institution Name" />
+                    <GridViewColumn Header="Name" />
+                    <GridViewColumn Header="ID" />
+                    <GridViewColumn Header="Birth Date" />
+                    <GridViewColumn Header="Sex" />
+                </GridView>
+            </ListView.View>
+        </sortableLstv:SortableListViewControl>-->
+
+    </DockPanel>
+</Window>

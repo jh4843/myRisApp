@@ -1,0 +1,70 @@
+@import "./utils.scss";
+
+$common-font-family: NotoSans, Helvetica, Arial;
+
+$normal-font-color: #ffffff;
+$highlight-font-color: #04a7fa;
+
+$app-white: #ffffff;
+$app-white-2: #f2f2f2;
+$app-white-3: #d8d8d8;
+$app-white-4: #c7c7c7;
+$app-white-5: #a1a1a1;
+$app-white-6: #808080;
+$app-white-7: #5d5d5d;
+$app-primary-color-2: #f1faff;
+$app-primary-color-1: #04a7fa;
+$app-sub-color-1:#a7e1fe;
+$app-dusty-orange: #ef764e;
+$app-bright-lavender: #c756ff;
+
+%common-font {
+  font-family: $common-font-family;
+  font-size: 13px;
+  font-weight: normal;
+
+  color: $app-white-7;
+
+  h2 {
+    @extend %h2-common;
+  }
+
+  h3 {
+    @extend %h3-common;
+  }
+
+  h4 {
+    @extend %h4-common;
+  }
+}
+
+%h2-common {
+  font-family: $common-font-family;
+  font-size: 23px;
+  font-weight: bold;
+
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+
+  margin: 0px;
+  padding: 0px;
+
+  color: $app-white-7;
+}
+
+%h3-common {
+  font-family: $common-font-family;
+  font-size: 14px;
+  font-weight: 500;
+
+  color: $app-white-7;
+}
+
+%h4-common {
+  font-family: $common-font-family;
+  font-size: 13px;
+  font-weight: 500;
+
+  color: $app-white-7;
+}

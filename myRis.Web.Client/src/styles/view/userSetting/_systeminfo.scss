@@ -1,0 +1,146 @@
+$user-setting-system-info-content-column: 3;
+$user-setting-system-info-content-row: 6;
+
+$user-setting-system-info-control-max-height: 40px;
+
+%user-setting-system-info-control {
+  width: 100%;
+  height: 100%;
+
+  max-height: $user-setting-system-info-control-max-height;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.system-info {
+  @extend %basic-view;
+  //
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  h3 {
+    @extend %h3-common;
+
+    margin: 0;
+    font-weight: normal;
+  }
+
+  &__title {
+    @extend %user-setting-view-title;
+  }
+
+  &__content-container {
+    @include common-grid-layout(
+      $user-setting-system-info-content-row,
+      $user-setting-system-info-content-column
+    );
+
+    width: 100%;
+    height: 60%;
+
+    gap: 3px 10px;
+    margin: 2% 0;
+
+    grid-template-columns: 1fr 2fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    //align-items: flex-start;
+    align-items: center;
+
+    // Application Name
+    &__app-name-label {
+      @extend %user-setting-grid-label-h3;
+
+      grid-row: 1;
+      grid-column: 1;
+    }
+
+    &__app-name-input {
+      @extend %user-setting-system-info-control;
+
+      grid-row: 1;
+      grid-column: 2;
+    }
+
+    // host name
+    &__host-name-label {
+      @extend %user-setting-grid-label-h3;
+
+      grid-row: 2;
+      grid-column: 1;
+    }
+
+    &__host-name-input {
+      @extend %user-setting-system-info-control;
+
+      grid-row: 2;
+      grid-column: 2;
+    }
+
+    // Name
+    &__port-no-label {
+      @extend %user-setting-grid-label-h3;
+
+      grid-row: 3;
+      grid-column: 1;
+    }
+
+    &__port-no-input {
+      @extend %user-setting-system-info-control;
+
+      grid-row: 3;
+      grid-column: 2;
+    }
+
+    // license type
+    &__license-type-label {
+      @extend %user-setting-grid-label-h3;
+
+      grid-row: 4;
+      grid-column: 1;
+    }
+
+    &__license-type-input {
+      @extend %user-setting-system-info-control;
+
+      grid-row: 4;
+      grid-column: 2;
+    }
+
+    // version
+    &__version-label {
+      @extend %user-setting-grid-label-h3;
+
+      grid-row: 5;
+      grid-column: 1;
+    }
+
+    &__version-input {
+      @extend %user-setting-system-info-control;
+
+      grid-row: 5;
+      grid-column: 2;
+    }
+
+    // language
+    &__language-label {
+      @extend %user-setting-grid-label-h3;
+
+      grid-row: 6;
+      grid-column: 1;
+    }
+
+    &__language-input {
+      @extend %user-setting-system-info-control;
+
+      grid-row: 6;
+      grid-column: 2;
+    }
+  }
+}

@@ -1,0 +1,173 @@
+%sps-dialog-control-common {
+  width: 100%;
+  height: 90%;
+  font-size: 14px;
+}
+
+.sps-dialog {
+  @extend %dialog-common;
+
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    @extend %dialog-container-common;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 30px 25px 20px 25px;
+
+    //width: 70%;
+    height: 70%;
+    width: 550px;
+
+    min-height: 500px;
+    // height: 680px;
+  }
+
+  &__title {
+    width: 100%;
+    height: 10%;
+
+    min-height: 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    h2 {
+      margin: 0px 0px 0px 10px; // up, right, down, left
+
+      font-size: 23px;
+      font-weight: normal;
+      color: #3e3e3e;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    height: 80%;
+
+    overflow: auto;
+
+    &__table {
+      @extend %common-font;
+
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+
+      table-layout: fixed;
+      overflow: scroll;
+
+      background-color: $app-white-2;
+      border-collapse: collapse;
+
+      text-align: left;
+
+      tr:nth-child(1) {
+        border-bottom: 1px solid $app-white-3;
+      }
+
+      tr {
+        height: 27px;
+      }
+
+      td {
+        height: 27px;
+        padding: 2px 5px;
+
+        vertical-align: middle;
+
+        .text-inputbox {
+          @extend %sps-dialog-control-common;
+          height: 27px;
+
+          .popup-table {
+            width: 150%;
+          }
+        }
+
+        .text-button {
+          @extend %sps-dialog-control-common;
+          width: 80px;
+          height: 27px;
+        }
+
+        .datepicker-base {
+          @extend %sps-dialog-control-common;
+          height: 27px;
+        }
+
+        .dropdown-base {
+          @extend %sps-dialog-control-common;
+          height: 27px;
+        }
+      }
+
+      &__control-order {
+        .text-button {
+          width: 40%;
+        }
+      }
+
+      &__patient-name {
+        .text-inputbox {
+          @extend %sps-dialog-control-common;
+
+          width: 98%;
+          margin-left: 1%;
+        }
+      }
+
+      th {
+        height: 30px;
+        padding: 2px 5px;
+      }
+
+      &__field {
+        width: 30%;
+      }
+
+      &__value {
+        width: 36%;
+      }
+
+      &__control1 {
+        width: 17%;
+      }
+
+      &__control2 {
+        width: 17%;
+      }
+    }
+  }
+
+  &__buttons {
+    width: 100%;
+    height: 10%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    .text-button {
+      width: 100px;
+      height: 35px;
+      margin-left: 15px;
+    }
+  }
+}
+
+.patient-dialog {
+  z-index: 2;
+}

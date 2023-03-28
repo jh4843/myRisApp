@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "./src/main.js",
+    "vue.config.js",
+    "babel.config.js"
+  ]
+}

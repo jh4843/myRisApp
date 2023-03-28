@@ -1,0 +1,216 @@
+@import "./common.scss";
+
+//button 1 (design: button1, use: primary control)
+$primary-button-background-color-normal: $app-primary-color-1;
+$primary-button-background-color-hover: #0498fa;
+$primary-button-background-color-select: #0288ef;
+$primary-button-background-color-disable: #b3e4fe;
+
+$primary-button-font-color-normal: $app-white;
+$primary-button-font-color-hover: $app-white;
+$primary-button-font-color-select: $app-white;
+$primary-button-font-color-disable: $app-white;
+
+//button 2 (design: button 2, use: sub control)
+$sub1-button-background-color-normal: $app-white;
+$sub1-button-background-color-hover: $app-white;
+$sub1-button-background-color-select: $app-white;
+$sub1-button-background-color-disable: $app-white;
+
+$sub1-button-font-color-normal: $app-white-6;
+$sub1-button-font-color-hover: #7ed4ff;
+$sub1-button-font-color-select: $app-primary-color-1;
+$sub1-button-font-color-disable: $app-white-3;
+
+$sub1-button-border-normal: solid 1px $app-white-3;
+$sub1-button-border-hover: solid 1px $app-white-4;
+$sub1-button-border-select: solid 1px $app-primary-color-1;
+$sub1-button-border-disable: solid 1px $app-white-3;
+
+// button 3 (design: button 4, use: title bar)
+$sub2-button-background-color-normal: transparent;
+$sub2-button-background-color-hover: rgba(255, 255, 255, 0.7);
+$sub2-button-background-color-select: $app-white;
+$sub2-button-background-color-disable: $app-white-4;
+
+$sub2-button-font-color-normal: $app-white;
+$sub2-button-font-color-hover: #0288ef;
+$sub2-button-font-color-select: #0288ef;
+$sub2-button-font-color-disable: $app-white;
+
+//button 4 (design: Cancel, use: Message Box base)
+$sub3-button-background-color-normal: $app-white-5;
+$sub3-button-background-color-hover: $app-white-6;
+$sub3-button-background-color-select: $app-white-7;
+$sub3-button-background-color-disable: $app-white-3;
+
+$sub3-button-font-color-normal: $app-white;
+$sub3-button-font-color-hover: $app-white;
+$sub3-button-font-color-select: $app-white;
+$sub3-button-font-color-disable: $app-white;
+
+$button-normal-background-color: #0280ef;
+$button-normal-border: solid 1px #ffffff;
+
+.text-button {
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 100%;
+}
+
+// Primary (Text Button)
+.text-button-container-primary {
+  @extend %button-container-common;
+  padding: 3.5px 0px;
+}
+
+.text-button-button-primary {
+  @extend %button-common;
+
+  color: $primary-button-font-color-normal;
+  background-color: $primary-button-background-color-normal;
+
+  border-radius: 30px;
+
+  &:hover {
+    color: $primary-button-font-color-hover;
+    background-color: $primary-button-background-color-hover;
+  }
+
+  &:active {
+    color: $primary-button-font-color-select;
+    background-color: $primary-button-background-color-select;
+  }
+
+  &:disabled {
+    color: $primary-button-font-color-disable;
+    background-color: $primary-button-background-color-disable;
+  }
+}
+
+.text-button-button-primary.disabled {
+  color: $primary-button-font-color-disable;
+  background-color: $primary-button-background-color-disable;
+
+  cursor: initial;
+  pointer-events: all !important;
+}
+
+// Sub1 (Text Button)
+.text-button-container-sub1 {
+  @extend %button-container-common;
+}
+
+.text-button-button-sub1 {
+  @extend %button-common;
+
+  color: $sub1-button-font-color-normal;
+  background-color: $sub1-button-background-color-normal;
+
+  border-radius: 30px;
+  border: $sub1-button-border-normal;
+
+  &:hover {
+    border: $sub1-button-border-hover;
+    color: $sub1-button-font-color-hover;
+    background-color: $sub1-button-background-color-hover;
+  }
+
+  &:active {
+    border: $sub1-button-border-select;
+    color: $sub1-button-font-color-select;
+    background-color: $sub1-button-background-color-select;
+  }
+
+  &:disabled {
+    border: $sub1-button-border-disable;
+    color: $sub1-button-font-color-disable;
+    background-color: $sub1-button-background-color-disable;
+  }
+}
+
+.text-button-button-sub1.disabled {
+  border: $sub1-button-border-disable;
+  color: $sub1-button-font-color-disable;
+  background-color: $sub1-button-background-color-disable;
+  cursor: initial;
+  pointer-events: all !important;
+}
+
+// Sub2 (Text Button)
+.text-button-container-sub2 {
+  @extend %button-container-common;
+  padding: 3.5px 0px;
+}
+
+.text-button-button-sub2 {
+  @extend %button-common;
+
+  color: $sub2-button-font-color-normal;
+  background-color: $sub2-button-background-color-normal;
+
+  border-radius: 30px;
+  border: $button-normal-border;
+
+  &:hover {
+    color: $sub2-button-font-color-hover;
+    background-color: $sub2-button-background-color-hover;
+  }
+
+  &:active {
+    color: $sub2-button-font-color-select;
+    background-color: $sub2-button-background-color-select;
+  }
+
+  &:disabled {
+    color: $sub2-button-font-color-disable;
+    background-color: $sub2-button-background-color-disable;
+  }
+}
+
+.text-button-button-sub2.disabled {
+  color: $sub2-button-font-color-disable;
+  background-color: $sub2-button-background-color-disable;
+
+  cursor: initial;
+  pointer-events: all !important;
+}
+
+// Sub3 (Text Button)
+.text-button-container-sub3 {
+  @extend %button-container-common;
+  padding: 3.5px 0px;
+}
+
+.text-button-button-sub3 {
+  @extend %button-common;
+
+  color: $sub3-button-font-color-normal;
+  background-color: $sub3-button-background-color-normal;
+
+  border-radius: 30px;
+
+  &:hover {
+    color: $sub3-button-font-color-hover;
+    background-color: $sub3-button-background-color-hover;
+  }
+
+  &:active {
+    color: $sub3-button-font-color-select;
+    background-color: $sub3-button-background-color-select;
+  }
+
+  &:disabled {
+    color: $sub3-button-font-color-disable;
+    background-color: $sub3-button-background-color-disable;
+  }
+}
+
+.text-button-button-sub3.disabled {
+  color: $sub3-button-font-color-disable;
+  background-color: $sub3-button-background-color-disable;
+
+  cursor: initial;
+  pointer-events: all !important;
+}

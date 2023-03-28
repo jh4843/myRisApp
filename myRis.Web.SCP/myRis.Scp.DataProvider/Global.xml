@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <SCPAETitle>QXSCPSRV</SCPAETitle>
+  <SCPHostName>localhost</SCPHostName>
+  <SCPDicomPort>104</SCPDicomPort>
+  <SCPWebPort>8081</SCPWebPort>
+  <SCPMaxConn>5</SCPMaxConn>
+  <CultureName>ko-KR</CultureName>
+</Configuration>

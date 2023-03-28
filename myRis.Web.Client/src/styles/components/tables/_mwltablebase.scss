@@ -1,0 +1,279 @@
+$min-mwl-table-base-row-height: 30px;
+
+%table-main-header-font {
+  font-family: $common-font-family;
+  font-size: 13px;
+  font-weight: bold;
+
+  color: $app-white-7;
+}
+
+%table-sub-header-font {
+  font-family: $common-font-family;
+  font-size: 11px;
+  font-weight: bold;
+
+  color: $app-white-7;
+}
+
+%table-main-body-font {
+  font-family: $common-font-family;
+  font-size: 13px;
+  font-weight: normal;
+
+  color: $app-white-7;
+}
+
+%table-sub-body-font {
+  font-family: $common-font-family;
+  font-size: 11px;
+  font-weight: normal;
+
+  color: $app-white-7;
+}
+
+%table-sub-footer-font {
+  font-family: $common-font-family;
+  font-size: 11px;
+  font-weight: normal;
+
+  color: $app-white-7;
+}
+
+.vgt-table.striped tbody .row-class.selected {
+  td.vgt-left-align, td.vgt-right-align {
+    color: $app-white;
+  }
+
+  background-color: rgb(122, 122, 122);
+}
+
+.footer__navigation.vgt-pull-right {
+  width: 50%;
+  min-width: 500px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.footer__navigation__page-btn {
+  width: 20%;
+  min-width: 110px;
+}
+
+.vgt-wrap__footer {
+  padding: 5px;
+
+  label {
+    @extend %table-sub-footer-font;
+  }
+
+  input {
+    @extend %table-sub-footer-font;
+  }
+
+  .footer__row-count__label {
+    @extend %table-sub-footer-font;
+  }
+
+  .footer__navigation__page-btn span {
+    @extend %table-sub-footer-font;
+  }
+
+  .footer__row-count__select {
+    @extend %table-sub-footer-font;
+    min-width: 40px;
+    font-weight: bold;
+  }
+
+  .footer__navigation__page-info {
+    margin: 0px 30px;
+  }
+}
+
+.vgt-global-search__input .input__icon .magnifying-glass {
+  visibility: hidden;
+}
+
+.vgt-global-search__input {
+  padding-left: 0;
+  margin-left: 10px;
+}
+
+.vgt-global-search {
+  border: 0px;
+}
+
+table.vgt-table th {
+  box-sizing: border-box;
+  @extend %table-main-header-font;
+}
+
+table.vgt-table tr {
+  @extend %table-main-body-font;
+  min-height: $min-mwl-table-base-row-height;
+}
+
+table.vgt-table td.nav-button {
+  padding: 0.75em 0.05em;
+}
+
+.mwl-table-base {
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0 0;
+
+  display: flex;
+  align-items: flex-start;
+  flex-flow: column;
+  justify-content: flex-start;
+
+  &__title {
+    box-sizing: border-box;
+
+    height: 5%;
+    max-height: 50px;
+    min-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .vgt-wrap {
+    width: 100%;
+  }
+
+  .vgt-responsive {
+    overflow: visible;
+  }
+
+  td.vgt-left-align.expand-btn {
+    padding: 0;
+    margin: 0;
+
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  &__expand-btn.expanded {
+    min-height: calc($min-mwl-table-base-row-height * 5);
+  }
+
+  &__expand-btn {
+    box-sizing: border-box;
+
+    width: 25px;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+    padding-left: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    background-color: transparent;
+
+    &__button {
+      width: 50%;
+      height: 50%;
+
+      max-width: 20px;
+      max-height: 20px;
+      
+      background-color: transparent;
+      border: none;
+      outline: none;
+
+      margin: 0 0;
+      padding: 0 0;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__sub-table {
+      position: relative;
+      top:0;
+      left: 10px;
+
+      min-width: 1300px;
+      height: calc($min-mwl-table-base-row-height * 3.5);
+
+      overflow: visible;
+
+      .popup-table {
+        position: absolute;
+        top: 15px;
+        left: 5px;
+
+        z-index: auto;
+
+        &__table {
+          &__header{
+            th {
+              font-size: 11px;
+            }
+          }
+
+          &__items{
+            td {
+              font-size: 11px;
+              color: #606266;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__grip-lines {
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+
+    &__button {
+      width: 50%;
+      height: 50%;
+
+      max-width: 20px;
+      max-height: 20px;
+
+      background-color: transparent;
+      border: none;
+      outline: none;
+
+      margin: 0 0;
+      padding: 0 0;
+
+      &__image {
+        width: 70%;
+        height: 70%;
+        fill: $app-white-4;
+
+        &:hover {
+          cursor: move; /* fallback if grab cursor is unsupported */
+          cursor: grab;
+          cursor: -moz-grab;
+          cursor: -webkit-grab;
+
+          &:active {
+            fill: $app-white-6;
+            cursor: grabbing;
+            cursor: -moz-grabbing;
+            cursor: -webkit-grabbing;
+          }
+        }
+      }
+    }
+  }
+}

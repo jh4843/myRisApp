@@ -1,0 +1,55 @@
+%user-setting-view-title {
+  width: 100%;
+  height: 5%;
+
+  margin-bottom: 10px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+
+  font-weight: bold;
+}
+
+%user-setting-view-table {
+  width: 100%;
+  height: 80%;
+
+  min-height: 680px;
+
+  margin-bottom: 2%;
+
+  overflow: auto;
+}
+
+%user-setting-grid-label-h3 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  font-weight: normal;
+}
+
+%user-setting-button-common {
+  width: 10%;
+  height: 40px;
+
+  margin-right: 10px;
+
+  min-width: 130px;
+}
+
+%user-setting-control-button-row {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  div {
+    @extend %user-setting-button-common;
+  }
+}

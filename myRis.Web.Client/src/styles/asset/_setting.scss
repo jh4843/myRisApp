@@ -1,0 +1,31 @@
+$user-setting-icon-normal: $app-white;
+$user-setting-icon-hover: #0288ef;
+$user-setting-icon-selected: #0288ef;
+$user-setting-icon-disable: $app-white;
+
+$user-setting-bk-normal: rgba(255, 255, 255, 0.4);
+$user-setting-bk-hover: rgba(255, 255, 255, 0.7);
+$user-setting-bk-selected: $app-white;
+$user-setting-bk-disable: $app-white-4;
+
+.header__menu__user-setting-icon {
+  @include setSvgIcon($user-setting-icon-normal, 
+  $user-setting-icon-hover, 
+  $user-setting-icon-selected, 
+  $user-setting-icon-disable, 
+  $user-setting-bk-normal, 
+  $user-setting-bk-hover, 
+  $user-setting-bk-selected, 
+  $user-setting-bk-disable);
+}
+
+.user-profile__content-container__image {
+  @include setSvgIcon($user-setting-icon-normal, 
+  $user-setting-icon-hover, 
+  $user-setting-icon-selected, 
+  $user-setting-icon-disable, 
+  $user-setting-bk-normal, 
+  $user-setting-bk-hover, 
+  $user-setting-bk-selected, 
+  $user-setting-bk-disable);
+}

@@ -1,0 +1,96 @@
+.mwl-toolbar {
+  width: $mwl-toolbar-width;
+  height: $mwl-toolbar-height;
+
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0px;
+
+  //box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+
+  &__list {
+    width: 80%;
+    height: 100%;
+
+    margin: 0px;
+
+    vertical-align: middle;
+
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 1%;
+
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    &__item {
+      display: inline-block;
+      margin-right: 8px;
+
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__table-type {
+    box-sizing: border-box;
+
+    width: 7%;
+    margin: 3px;
+    min-width: 80px;
+    height: 90%;
+
+    &__item {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid $app-white-3;
+    }
+
+    &__item-last {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    border-style: solid;
+    border-radius: 5pt;
+    border-width: 1px;
+    border-color: $app-white-3;
+    box-shadow: 1px 2px 1px 1px gray;
+
+    //outline: 1px solid $app-white-3;
+
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+.toolbar-button__Icon {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.toolbar-button__Icon.disabled {
+  cursor: unset;
+  pointer-events: none;
+}

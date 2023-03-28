@@ -1,0 +1,94 @@
+@import "../common.scss";
+@import "../components/table.scss";
+
+%basic-view {
+  @extend %common-font;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+%basic-mini-view {
+  @extend %common-font;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  padding: 32px 0px 0px 0px;
+
+  border: solid 1px $app-white-3;
+  background-color: $app-white;
+
+  box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.1);
+  opacity: 0.8;
+
+  h2 {
+    font-weight: normal;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 11px;
+    font-weight: normal;
+  }
+}
+
+%mini-view-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $app-white-2;
+}
+
+%mini-view-title {
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 10%;
+  padding: 0px 32px 0px 32px;
+}
+
+%mini-view-body {
+  @extend %common-font;
+
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 88%;
+  padding: 0px 32px 0px 32px;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+%mini-view-body-row {
+  box-sizing: border-box;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%mini-view-footer {
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 2%;
+
+  padding: 0 0;
+
+  background-image: linear-gradient(to left, #0280ef, #04b1fe);
+  margin-top: auto;
+  border-radius: 8px;
+}

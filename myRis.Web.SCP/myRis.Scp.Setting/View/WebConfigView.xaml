@@ -1,0 +1,208 @@
+﻿<UserControl x:Class="myRis.Web.Scp.Setting.View.WebConfigView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style BasedOn="{StaticResource myFlatButtonStyle}" TargetType="{x:Type Button}" />
+        <Style
+            x:Key="imgButtonStyle"
+            BasedOn="{StaticResource myFlatImgButtonStyle}"
+            TargetType="{x:Type Button}" />
+
+        <Style x:Key="grdvHeaderStyle" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="Height" Value="20" />
+        </Style>
+        <Style x:Key="grdvItemStyle" TargetType="{x:Type ListViewItem}">
+            <Setter Property="Height" Value="15" />
+        </Style>
+
+        <Path x:Key="circleTop" Data="M12.11,4.77l0,0h0l0,0h0a.41.41,0,0,0-.53,0L11.27,5a5.18,5.18,0,0,0-5-5A5.26,5.26,0,0,0,2.45,1.51.41.41,0,0,0,3,2.09a4.35,4.35,0,0,1,7.42,3.19l-.53-.53a.41.41,0,0,0-.58,0,.41.41,0,0,0,0,.58l1.09,1.08a.4.4,0,0,0,.29.12A.42.42,0,0,0,11,6.41l1.08-1.08A.4.4,0,0,0,12.21,5,.38.38,0,0,0,12.11,4.77Z" />
+        <Path x:Key="circleBottom" Data="M9.18,8.24h0A4.35,4.35,0,0,1,1.76,5.05l.54.53A.41.41,0,0,0,2.87,5L1.78,3.92a.4.4,0,0,0-.57,0L.12,5a.41.41,0,0,0,0,.58.43.43,0,0,0,.58,0L1,5.33a5.17,5.17,0,0,0,5,5h.17A5.18,5.18,0,0,0,9.76,8.81a.34.34,0,0,0,.11-.29.36.36,0,0,0-.12-.28A.4.4,0,0,0,9.18,8.24Z" />
+        <SolidColorBrush x:Key="CustomButtonHighlightSolidColorBrushKey" Color="#ffefefef" />
+        <Style x:Key="circleBtnStyle" TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="30" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Background" Value="#5e5e5e" />
+            <Setter Property="Foreground" Value="{StaticResource CustomButtonHighlightSolidColorBrushKey}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="0"
+                            CornerRadius="1000">
+                            <ContentPresenter
+                                x:Name="contentPresenter"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#4e4e4e" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#3e3e3e" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <StackPanel Height="500">
+        <!--  Server Status  -->
+        <TextBlock FontWeight="Bold" Text="Web Server Status" />
+        <Grid Margin="10,10,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label Content="SERVER IS : " />
+            <TextBlock
+                Grid.Column="1"
+                FontWeight="Bold"
+                Text="{Binding ServerStatus}" />
+        </Grid>
+        
+        <Separator Margin="10,0,0,10" />
+        
+        <!--  Web Server Settings  -->
+        <TextBlock FontWeight="Bold" Text="Service Class Provider" />
+        <Grid Margin="10,10,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Text="Alias :" />
+            <TextBlock Grid.Row="1" Text="Host Name :" />
+            <TextBlock Grid.Row="2" Text="Web Port :" />
+            <TextBox
+                x:Name="tbxWebServerAETitle"
+                Grid.Column="1"
+                MinWidth="60"
+                Margin="0,0,0,3"
+                Text="{Binding ServerInfo.alias, Mode=TwoWay}" />
+            <TextBox
+                x:Name="tbxWebServerHostName"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0,0,0,3"
+                Text="{Binding ServerInfo.hostName, Mode=TwoWay}" />
+            <TextBox
+                x:Name="tbxWebServerPort"
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="0,0,0,3"
+                Text="{Binding ServerInfo.port, Mode=TwoWay}" />
+        </Grid>
+
+        <!--  Server Start & Stop  -->
+        <!--<Grid Margin="10,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.25*" />
+                <ColumnDefinition Width="0.25*" />
+                <ColumnDefinition Width="0.25*" />
+                <ColumnDefinition Width="0.25*" />
+            </Grid.ColumnDefinitions>
+
+            --><!--<Viewbox Width="12" Height="10">
+                <Canvas Background="CadetBlue">
+                    <Path Data="{Binding Source={StaticResource circleTop}, Path=Data}" Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" />
+                    <Path Data="{Binding Source={StaticResource circleBottom}, Path=Data}" Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" />
+                </Canvas>
+            </Viewbox>--><!--
+
+            <Button x:Name="btnWebServerClear" Style="{DynamicResource circleBtnStyle}" Visibility="Collapsed">
+                <Viewbox>
+                    <Canvas Width="12.21" Height="10.33">
+                        <Path Data="{Binding Source={StaticResource circleTop}, Path=Data}" Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" />
+                        <Path Data="{Binding Source={StaticResource circleBottom}, Path=Data}" Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" />
+                    </Canvas>
+                </Viewbox>
+            </Button>
+            <Button
+                x:Name="btnInstallWebService"
+                Grid.Column="0"
+                Height="33"
+                Content="       Install       " />
+            <Button
+                x:Name="btnUnInstallWebService"
+                Grid.Column="1"
+                Height="33"
+                Margin="1,0"
+                Content="    Uninstall     " />
+            <Button
+                x:Name="btnWebServerStart"
+                Grid.Column="2"
+                Height="33"
+                Margin="1,0"
+                Content="   Start Server   " />
+            <Button
+                x:Name="btnWebServerStop"
+                Grid.Column="3"
+                Height="33"
+                Margin="1,0"
+                Content="   Stop Server   " />
+        </Grid>-->
+        <Separator Margin="10,0,0,10" />
+
+        <!--  Misc. -->
+        <TextBlock FontWeight="Bold" Text="Miscellaneous options" />
+        <Grid Margin="10,10,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Text="License type" Grid.Row="0" Margin="0, 3"/>
+            <ComboBox
+                x:Name="cbxLicense"
+                ItemsSource="{Binding LicenseTypeList}"
+                Visibility="Visible"
+                Grid.Row="1">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </Grid>
+
+        <Separator Margin="10,0,0,10" />
+
+        <Grid Margin="10,0,0,10" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.25*" />
+                <ColumnDefinition Width="0.25*" />
+                <ColumnDefinition Width="0.25*" />
+                <ColumnDefinition Width="0.25*" />
+            </Grid.ColumnDefinitions>
+
+            <Button
+                x:Name="btnSaveServer"
+                Grid.Column="3"
+                Height="33"
+                Margin="1,0"
+                Content="       Save       " />
+        </Grid>
+    </StackPanel>        
+</UserControl>

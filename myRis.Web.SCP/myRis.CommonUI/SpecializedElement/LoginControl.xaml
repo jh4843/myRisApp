@@ -1,0 +1,125 @@
+﻿<UserControl x:Class="myRis.Web.Scp.CommonUI.SpecializedElement.LoginControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             >
+    <!--d:DesignHeight="400" d:DesignWidth="450"-->
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource myFlatButtonStyle}"/>
+    </UserControl.Resources>
+
+    <Border x:Name="border" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" CornerRadius="20" Grid.RowSpan="2">
+        <!--<border.effect>
+                <dropshadoweffect />
+            </border.effect>-->
+        <Grid>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Button}" x:Key="systemButton">
+                        <Setter Property="Padding" Value="0"/>
+                        <Setter Property="Width" Value="35"/>
+                        <Setter Property="Height" Value="25"/>
+                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                        <Setter Property="VerticalAlignment" Value="Top"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}"  BorderThickness="0">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="Button.IsMouseOver" Value="True">
+                                <Setter Property="Button.Background" Value="LightGray" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+                <Image x:Name="imgICON"  VerticalAlignment="Top" HorizontalAlignment="left" Width="20" Height="20" Margin="20,10,0,0" />
+                <TextBlock Text="myRis SCP Broker" VerticalAlignment="Top" Margin="10,10,0,0" FontSize="15" FontWeight="Bold" Foreground= "#FF04A7FA"/>
+                <Button Margin="100 30 0 0" HorizontalAlignment="Right" VerticalAlignment="Top" Click="Close_Click">
+                    <Button.Style>
+                        <Style TargetType="Button" BasedOn="{StaticResource systemButton}">
+                            <Style.Triggers>
+                                <Trigger Property="Button.IsMouseOver" Value="True">
+                                    <!--<Setter Property="Button.Background" Value="Red" />-->
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Canvas Height="25" Width="35">
+                        <Line    
+                                        X1="12" Y1="8" 
+                                        X2="22" Y2="18"    
+                                        Stroke="Black" StrokeThickness="0.75"/>
+                        <Line    
+                                        X1="12" Y1="18"    
+                                        X2="22" Y2="8"  
+                                        Stroke="Black" StrokeThickness="0.75"/>
+                    </Canvas>
+                </Button>
+            </StackPanel>
+            <DockPanel>
+                <Label DockPanel.Dock="Top" x:Name="lblHeader" Height="25" VerticalContentAlignment="Top" Cursor="SizeAll" PreviewMouseMove="System_MouseMove"/>
+                <Grid Margin="20 80 20 0" HorizontalAlignment="Center" Width="300" >
+                    <Grid.ColumnDefinitions>
+                        <!--<ColumnDefinition  Width=".26*"/>-->
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="90"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="70"  />
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF878787" FontSize="30" Text="LogIn"  />
+                    <!--<TextBlock Grid.Row="2" Text="User ID :" />-->
+                    <TextBox Grid.Row="2" Margin="5" x:Name="tbxID"  Text="service" IsReadOnly="True"/>
+                    <TextBlock Margin="12 0 0 0" IsHitTestVisible="False" Text="User ID" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="DarkGray" Grid.Row="2" >
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Text, ElementName=tbxID}" Value="">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
+                    <!--<TextBlock Grid.Row="3" Text="User password :" />-->
+                    <PasswordBox Grid.Row="3" Margin="5" x:Name="tbxPwd" PasswordChanged="tbxPwd_PasswordChanged" />
+                    <TextBlock x:Name="tbkPwdBox" Margin="12 0 0 0" IsHitTestVisible="False" Text="Password" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="DarkGray" Grid.Row="3">
+                        <!--<TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding PasswordBoxText}" Value="">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>-->
+                    </TextBlock>
+
+                    <TextBlock Grid.Row="4" Grid.Column="1" x:Name="tbkMsg" HorizontalAlignment="Left" FontSize="9" Foreground="RosyBrown"   />
+                    <Button x:Name="btnEnter" Click="btnEnter_Click" Margin="5" Grid.Row="5" Grid.Column="1" DockPanel.Dock="Bottom"  HorizontalContentAlignment="Stretch"  Height="59" >
+                        <TextBlock Text="Log in" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="WhiteSmoke" FontSize="22" />
+                    </Button>
+                </Grid>
+            </DockPanel>
+        </Grid>
+    </Border>
+</UserControl>
+
+    

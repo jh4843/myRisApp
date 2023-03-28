@@ -1,0 +1,97 @@
+@import "../common.scss";
+
+$expand-item-border-normal: solid 1px $app-white-3;
+$expand-item-border-hover: solid 1px $app-white-5;
+$expand-item-border-selected: solid 1px $app-primary-color-1;
+$expand-item-border-disable: solid 1px $app-white-3;
+
+$expand-item-font-color-normal: $app-white-6;
+$expand-item-font-color-hover: $app-white-7;
+
+$expand-item-row-height: 14px;
+
+.popup-table {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0px;
+
+  z-index: 10;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  overflow: auto;
+
+  margin: 0px 0px;
+  padding: 0px 0px;
+
+  border-radius: 8px;
+  border: $expand-item-border-normal;
+
+  background-color: #f6f6f6;
+
+  &__container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 2px;
+    
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  &__table {
+    @extend %common-font;
+    font-size: 11px;
+
+    width: 100%;
+
+    background-color: $app-white-2;
+    border-collapse: collapse;
+
+    td th {
+      height: $expand-item-row-height;
+      padding: 2px 5px;
+    }
+
+    tr {
+      width: 100%;
+      margin: 0 0;
+      padding: 0 0;
+
+      height: $expand-item-row-height;
+      color: $expand-item-font-color-normal;
+
+      text-align: left;
+      user-select: none;
+      padding-left: 1em;
+    }
+
+    tr:nth-child(1) {
+      border-bottom: 1px solid $app-white-3;
+    }
+
+    tr:nth-child(n + 2) {
+      cursor: pointer;
+      &:hover {
+        color: $expand-item-font-color-hover;
+        background-color: $app-white-3;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &.is-none-border {
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+
+    &:disabled {
+      border: none;
+    }
+  }
+}

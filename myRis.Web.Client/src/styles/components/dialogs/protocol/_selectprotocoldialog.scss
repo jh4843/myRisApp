@@ -1,0 +1,46 @@
+$user-setting-select-protocol-content-column: 1;
+$user-setting-select-protocol-content-row: 1;
+
+$user-setting-select-protocol-control-max-height: 40px;
+
+%user-setting-select-protocol-control {
+  width: 100%;
+  height: 100%;
+
+  max-height: $user-setting-select-protocol-control-max-height;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-protocol-dialog {
+  @extend %select-dialog-common;
+
+  &__container {
+    @extend %select-dialog-container-common;
+  }
+
+  h3 {
+    @extend %h3-common;
+
+    margin: 0;
+    font-weight: normal;
+  }
+
+  &__title {
+    @extend %dialog-title-common;
+  }
+
+  &__content {
+    width: 100%;
+    height: 80%;
+    
+    overflow: auto;
+  }
+
+  &__control-row {
+    @extend %dialog-control-button-row;
+  }
+}

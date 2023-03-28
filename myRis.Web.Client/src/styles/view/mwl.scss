@@ -1,0 +1,103 @@
+@import "./commonView.scss";
+@import "./mwl/_drawer.scss";
+@import "./mwl/_toolbar.scss";
+
+.layout-mwl {
+  @extend %basic-view;
+
+  width: 100%;
+  height: 100%;
+
+  &__toolbar {
+    width: $mwl-toolbar-width;
+    height: $mwl-toolbar-height;
+
+    margin: 0px;
+
+    //box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+  }
+
+  &__content {
+    width: 100%;
+    height: calc(100% - $mwl-toolbar-height);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    background-color: $app-white-2;
+
+    overflow: auto;
+
+    .content-drawer-enter-active,
+    .content-drawer-leave-active {
+      transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+    }
+
+    .content-drawer-enter-from,
+    .content-drawer-leave-to {
+      transform: translateX(20px);
+      opacity: 0;
+    }
+
+    &__search-drawer {
+      width: $mwl-search-drawer-width-opend;
+
+      box-sizing: border-box;
+
+      background-color: $app-white;
+    }
+
+    &__show-search-drawer-button__container {
+      box-sizing: border-box;
+
+      width: $mwl-search-drawer-open-button-width;
+      padding: 0;
+      height: 100%;
+      background-color: transparent;
+
+      display: flex;
+
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__show-search-drawer-button {
+      box-sizing: border-box;
+
+      width: 90%;
+      height: $mwl-search-drawer-open-button-height;
+      padding: 0 5% 0 5%;
+
+      transform: rotate(180deg);
+
+      background-color: $app-white;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
+
+      display: flex;
+
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .is-opend {
+        transform: rotate(180deg);
+        transition: all 0.5s;
+      }
+    }
+
+    &__table {
+      width: $mwl_table-width-drawer-closed;
+
+      &.is-drawer-opend {
+        width: $mwl-table-width-drawer-opend;
+      }
+    }
+  }
+}

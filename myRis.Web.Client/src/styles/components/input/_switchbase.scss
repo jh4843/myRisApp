@@ -1,0 +1,121 @@
+$slider-width: 50px;
+$slider-height: 25px;
+
+$switch-dot-length: 25px;
+$switch-bar-width: 36px;
+$switch-bar-height: 18px;
+$switch-overlapped-width: 5px;
+
+$switch-on-dot-color: $app-primary-color-1;
+$switch-on-line-color: $app-sub-color-1;
+
+$switch-off-dot-color: $app-sub-color-1;
+$switch-off-line-color: $app-primary-color-1;
+
+.switch-base {
+  @extend %inline-component;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+
+  &__label {
+    @extend %common-font;
+    box-sizing: border-box;
+    width: 60%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin-left: 5px;
+
+    background-color: transparent;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &__control {
+    box-sizing: border-box;
+    width: 40%;
+    min-width: $slider-width;
+    height: $slider-height;
+
+    display: inline-block;
+
+    &__slider {
+      cursor: pointer;
+
+      $switch-transition: all 0.3s ease-in-out;
+      $switch-is-rounded: true;
+
+      width: 100%;
+      height: 100%;
+
+      display: inline-block;
+      border: none;
+
+      position: relative; 
+      top: 0;
+      left: 0;
+      
+      transition: $switch-transition;
+      background-color: transparent;
+
+      &__dot {
+        box-sizing: border-box;
+        display: inline-block;
+        
+        width: $switch-dot-length;
+        height: $switch-dot-length;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.16);
+        background: $switch-off-dot-color;
+        border-radius: if($switch-is-rounded, $switch-dot-length, 0);
+        
+        transition: $switch-transition;
+      }
+
+      &__bar {
+        width: $switch-bar-width;
+        height: $switch-bar-height;
+
+        display: inline-block;
+        position: absolute;
+        top: 4px;
+        left: $switch-overlapped-width;
+        border-radius: 10px;
+        background-color: $switch-off-line-color;
+      }
+
+      &.on {
+        box-shadow: none;
+  
+        .switch-base__control__slider__dot {
+          
+          box-shadow: 0 2px 6px 0 rgba(4, 167, 250, 0.16);
+          background: $switch-on-dot-color;
+          transform: translateX(
+            $switch-dot-length
+          );
+        }
+
+        .switch-base__control__slider__bar {
+          background-color: $switch-on-line-color;
+        }
+      }
+
+    }
+  }
+}
+

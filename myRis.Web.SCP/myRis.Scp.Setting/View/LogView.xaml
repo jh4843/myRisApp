@@ -1,0 +1,25 @@
+﻿<UserControl
+    x:Class="myRis.Web.Scp.Setting.View.LogView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sortLstv="clr-namespace:myRis.Web.Scp.CommonUI.SortableListView;assembly=myRis.Web.Scp.CommonUI"
+    mc:Ignorable="d">
+    <Grid>
+        <sortLstv:SortableListViewControl
+            x:Name="logLst"
+            Grid.IsSharedSizeScope="True"
+            ItemsSource="{Binding ClientInfoList}">
+            <ListView.View>
+                <GridView AllowsColumnReorder="True">
+                    <GridViewColumn Header="aaa" />
+                    <GridViewColumn Header="bbb" />
+                    <GridViewColumn Header="ccc" />
+                    <GridViewColumn Header="ddd" />
+                </GridView>
+            </ListView.View>
+        </sortLstv:SortableListViewControl>
+    </Grid>
+</UserControl>
+

@@ -1,0 +1,17 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": false,
+
+  "prettier.trailingComma": "es5",
+  "prettier.printWidth": 120,
+
+  "vetur.experimental.templateInterpolationService": true,
+  "liveServer.settings.port": 5501,
+  "search.exclude": {
+    "**/build/**": true,
+    "**/public/**": true
+  },
+  "prettier.endOfLine": "auto"
+}

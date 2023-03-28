@@ -1,0 +1,30 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Button -->
+    <sys:String x:Key="langClear">Clear</sys:String>
+    <sys:String x:Key="langAdd">Add</sys:String>
+
+    <!-- Server Access Label -->
+    <sys:String x:Key="langServerAccessNormal">Any client can get the access</sys:String>
+    <sys:String x:Key="langServerAccessLimited">Only the client below gets the access</sys:String>
+
+    <!-- Client ListView Column Header -->
+    <sys:String x:Key="langServerLstvAETitle">Calling AE Title</sys:String>
+    <sys:String x:Key="langServerLstvHostName">Host Name</sys:String>
+
+
+
+    <!-- MWL ListView Column Header -->
+    <!--<sys:String x:Key="langServerAccessLimited">- only the client below gets the access</sys:String>
+    <sys:String x:Key="langServerAccessLimited">- only the client below gets the access</sys:String>
+    <sys:String x:Key="langServerAccessLimited">- only the client below gets the access</sys:String>
+    <sys:String x:Key="langServerAccessLimited">- only the client below gets the access</sys:String>
+    <sys:String x:Key="langServerAccessLimited">- only the client below gets the access</sys:String>
+    <sys:String x:Key="langServerAccessLimited">- only the client below gets the access</sys:String>
+    <sys:String x:Key="langServerAccessLimited">- only the client below gets the access</sys:String>
+    <sys:String x:Key="langServerAccessLimited">- only the client below gets the access</sys:String>
+    <sys:String x:Key="langServerAccessLimited">- only the client below gets the access</sys:String>-->
+
+</ResourceDictionary>

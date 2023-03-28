@@ -1,0 +1,126 @@
+$sign-up-control-height: 35px;
+
+.layout-sign-up-container {
+  @extend %mini-view-container;
+}
+
+%sign-up-control-common {
+  box-sizing: border-box;
+
+  width: 60%;
+  min-width: 100px;
+  height: $sign-up-control-height;
+  font-size: 13.5px;
+}
+
+.layout-sign-up {
+  @extend %basic-mini-view;
+  width: 836px;
+  height: 618px;
+
+  &__title {
+    @extend %mini-view-title;
+
+    color: $app-white-7;
+  }
+  &__body {
+    @extend %mini-view-body;
+
+    &__title {
+      box-sizing: inherit;
+
+      width: 100%;
+      height: 15%;
+    }
+
+    &__inputs {
+      box-sizing: inherit;
+
+      width: 100%;
+      height: 60%;
+
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: center;
+
+      &__container {
+        box-sizing: inherit;
+
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &__row {
+        @extend %mini-view-body-row;
+
+        width: 65%;
+        height: 17%;
+        padding: 0 18% 0 2%;
+        min-width: 300px;
+        min-height: $sign-up-control-height;
+
+        .text-inputbox {
+          @extend %sign-up-control-common;
+
+          input {
+            background-color: #f6f6f6;
+          }
+        }
+
+        .dropdown-base {
+          @extend %sign-up-control-common;
+
+          &__label {
+            background-color: #f6f6f6;
+          }
+        }
+      }
+    }
+
+    &__err-msg {
+      width: 100%;
+      height: 5%;
+
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+
+      font-size: small;
+      color: red;
+    }
+
+    &__buttons {
+      width: 100%;
+      height: 30%;
+
+      min-height: 80px;
+
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: center;
+
+      &__create {
+        width: 220px;
+        height: 50px;
+        margin-bottom: 10px;
+      }
+
+      a {
+        font-size: 12px;
+        color: $app-white-6;
+      }
+    }
+  }
+
+  &__footer {
+    @extend %mini-view-footer;
+  }
+}

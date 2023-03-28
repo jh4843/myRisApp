@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>..\Resources\myRisWebSCP.ico</ApplicationIcon>
+	  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\Bins\Debug\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\Bins\Release\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <FileVersion>1.0.0.2</FileVersion>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\myRis.Web.Scp.CommonUI\myRis.Web.Scp.CommonUI.csproj" />
+    <ProjectReference Include="..\myRis.Web.Scp.DataProvider\myRis.Web.Scp.DataProvider.csproj" />
+    <ProjectReference Include="..\myRis.Web.Scp.Data\myRis.Web.Scp.Data.csproj" />
+    <ProjectReference Include="..\myRis.Web.Scp.Dicom\myRis.Web.Scp.Dicom.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Leadtools">
+      <HintPath>..\libs\Leadtools.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Dicom">
+      <HintPath>..\libs\Leadtools.Dicom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\Profile\Client\System.Windows.Forms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="NPM\qckwinsvc\" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="set Dest= $(SolutionDir)myRis.Web.SCP\Bins\$(Configuration)\qckwinsvc&#xD;&#xA;if not exist %25Dest%25 mkdir %25Dest%25&#xD;&#xA;xcopy &quot;$(ProjectDir)NPM\qckwinsvc\*.*&quot; %25Dest%25 /Y /I /E&#xD;&#xA;&#xD;&#xA;set WebSrvDest= $(SolutionDir)myRis.Web.SCP\Bins\myRisWeb&#xD;&#xA;if not exist %25WebSrvDest%25 mkdir %25WebSrvDest%25&#xD;&#xA;if not exist $(SolutionDir)myRis.Web.SCP\Bins\myRisWeb\install_myRisweb_server_service.bat xcopy &quot;$(SolutionDir)myRis.Web.SCP\install_myRisweb_server_service.bat&quot; %25WebSrvDest%25&#xD;&#xA;if not exist $(SolutionDir)myRis.Web.SCP\Bins\myRisWeb\uninstall_myRisweb_server_service.bat xcopy &quot;$(SolutionDir)myRis.Web.SCP\uninstall_myRisweb_server_service.bat&quot; %25WebSrvDest%25&#xD;&#xA;&#xD;&#xA;set BinsDest= $(SolutionDir)myRis.Web.SCP\Bins\$(Configuration)&#xD;&#xA;xcopy &quot;$(SolutionDir)myRis.Web.SCP\libs\Ijwhost.dll&quot; %25BinsDest%25 /Y" />
+  </Target>
+
+</Project>

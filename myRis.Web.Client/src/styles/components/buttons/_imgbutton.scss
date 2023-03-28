@@ -1,0 +1,108 @@
+@import "./common.scss";
+
+//image button primary
+$primary-img-button-background-color-normal: transparent;
+$primary-img-button-background-color-hover: transparent;
+$primary-img-button-background-color-select: transparent;
+$primary-img-button-background-color-disable: transparent;
+
+//image button sub1 (design: button 3)
+$sub1-img-button-background-color-normal: $app-white-7;
+$sub1-img-button-background-color-hover: #4e4e4e;
+$sub1-img-button-background-color-select: #3e3e3e;
+$sub1-img-button-background-color-disable: $app-white-4;
+
+// (design: button 4, use: title bar)
+$sub2-img-button-background-color-normal: transparent;
+$sub2-img-button-background-color-hover: rgba(255, 255, 255, 0.7);
+$sub2-img-button-background-color-select: $app-white;
+$sub2-img-button-background-color-disable: transparent;
+
+$sub2-img-button-font-color-normal: $app-white;
+$sub2-img-button-font-color-hover: #0288ef;
+$sub2-img-button-font-color-select: #0288ef;
+$sub2-img-button-font-color-disable: #0288ef;
+
+// Primary
+.img-button-container-primary {
+  @extend %button-container-common;
+}
+
+.img-button-button-primary {
+  @extend %button-common;
+
+  background-color: $primary-img-button-background-color-normal;
+  border: none;
+}
+
+// Sub1
+.img-button-container-sub1 {
+  @extend %button-container-common;
+}
+
+.img-button-button-sub1 {
+  @extend %button-common;
+
+  background-color: $sub1-img-button-background-color-normal;
+  border: none;
+
+  &:hover {
+    background-color: $sub1-img-button-background-color-hover;
+  }
+
+  &:active {
+    background-color: $sub1-img-button-background-color-select;
+  }
+
+  &:disabled {
+    background-color: $sub1-img-button-background-color-disable;
+  }
+}
+
+// Sub2
+.img-button-container-sub2 {
+  @extend %button-container-common;
+}
+
+.img-button-button-sub2 {
+  @extend %button-common;
+
+  background-color: $sub2-img-button-background-color-normal;
+  border: none;
+
+  &:hover {
+    background-color: $sub2-img-button-background-color-hover;
+  }
+
+  &:active {
+    background-color: $sub2-img-button-background-color-select;
+  }
+
+  &:disabled {
+    background-color: $sub2-img-button-background-color-disable;
+  }
+}
+
+.img-button-button-background-rect-primary {
+  background-color: "transparent";
+}
+
+.img-button-img-background-circle-primary {
+  width: 95%;
+  height: 95%;
+
+  background-color: $app-white-7;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: #4e4e4e;
+  }
+
+  &:active {
+    background-color: #3e3e3e;
+  }
+
+  &:disabled {
+    background-color: $app-white-4;
+  }
+}

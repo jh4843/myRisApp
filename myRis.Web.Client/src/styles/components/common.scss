@@ -1,0 +1,160 @@
+
+
+$button3-icon-fill-normal: $app-white;
+$button3-icon-fill-hover: $app-white;
+$button3-icon-fill-select: $app-white;
+$button3-icon-fill-disable: $app-white;
+
+$button3-icon-background-normal: $app-white-7;
+$button3-icon-background-hover: #4e4e4e;
+$button3-icon-background-select: #3e3e3e;
+$button3-icon-background-disable: $app-white-4;
+
+$dropdown-option-item-height: 25; //px
+
+%inline-component {
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0 0; // 위아래, 좌우
+}
+
+%component-container-base {
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0 0; // 상 우 하 좌
+  //margin: 1% 0;
+
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  .svg-base-icon {
+    cursor: pointer;
+  }
+}
+
+%component-label-container-base {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-transition: background-color 9999s ease-out;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    -webkit-text-fill-color: #fff !important;
+  }
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+  padding: 0 0;
+  margin: 0 0;
+
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  border: none;
+
+  &::placeholder {
+    color: $app-white-4;
+  }
+
+  &:hover {
+    cursor: text;
+  }
+
+  &.is-none-border {
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+
+    &:disabled {
+      border: none;
+    }
+  }
+}
+
+%component-item-base {
+  @extend %common-font;
+  
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-transition: background-color 9999s ease-out;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    -webkit-text-fill-color: #fff !important;
+  }
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+  vertical-align: middle;
+  padding: 0px 0px;
+  border: none;
+  margin: 0 0;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  &::placeholder {
+    color: $app-white-4;
+  }
+
+  &:hover {
+    cursor: text;
+  }
+
+  &.is-none-border {
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+
+    &:disabled {
+      border: none;
+    }
+  }
+}
+
+/*
+:export {
+  ComponentIconFillNormal: $component-icon-fill-normal;
+  ComponentIconFillHover: $component-icon-fill-hover;
+  ComponentIconFillSelect: $component-icon-fill-select;
+  ComponentIconFillDisable: $component-icon-fill-disable;
+
+  ComponentIconBackgroundNormal: $component-icon-background-normal;
+  ComponentIconBackgroundHover: $component-icon-background-hover;
+  ComponentIconBackgroundSelect: $component-icon-background-select;
+  ComponentIconBackgroundDisable: $component-icon-background-disable;
+
+  Button3IconFillNormal: $button3-icon-fill-normal;
+  Button3IconFillHover: $button3-icon-fill-hover;
+  Button3IconFillSelect: $button3-icon-fill-select;
+  Button3IconFillDisable: $button3-icon-fill-disable;
+
+  Button3IconBackgroundNormal: $button3-icon-background-normal;
+  Button3IconBackgroundHover: $button3-icon-background-hover;
+  Button3IconBackgroundSelect: $button3-icon-background-select;
+  Button3IconBackgroundDisable: $button3-icon-background-disable;
+
+  DropdownOptionItemHeight: $dropdown-option-item-height;
+}
+*/

@@ -1,0 +1,94 @@
+$userSettingIcon_Normal: $app-white;
+$userSettingIcon_Hover: #0288ef;
+$userSettingIcon_Selected: #0288ef;
+
+$userSettingBackground_Normal: rgba(255, 255, 255, 0.4);
+$userSettingBackground_Hover: rgba(255, 255, 255, 0.7);
+$userSettingBackground_Selected: $app-white;
+
+.sign-out-message-box {
+  width: 400px;
+  height: 250px;
+}
+
+.header {
+  box-sizing: border-box;
+  width: 100%;
+  //height: 100%; // 72pixel
+
+  background-image: linear-gradient(to left, #0280ef 4%, #04b1fe);
+  vertical-align: middle;
+
+  &__header {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+
+    padding: 16px 24px 16px 24px;
+  }
+
+  &__container {
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  &__main {
+    vertical-align: middle;
+    white-space: nowrap;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__menu {
+    //display: inline-flex;
+
+    display: flex;
+
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: auto;
+    height: 40px;
+
+    min-width: 300px;
+
+    float: right;
+
+    &__sign-in,
+    &__sign-up,
+    &__sign-out {
+      width: 96px;
+      height: 35px;
+    }
+
+    &__user-setting-icon {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    li {
+      display: inline-block;
+      vertical-align: middle;
+
+      img {
+        vertical-align: middle;
+        width: 40px;
+        height: 40px;
+      }
+
+      padding-left: 20px;
+    }
+
+    max-width: 30%;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
